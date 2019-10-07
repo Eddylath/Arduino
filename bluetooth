@@ -1,0 +1,16 @@
+int a=13;
+int val=0;
+void setup() {
+  Serial.begin(9600);
+  //Serial2.begin(19200);
+  pinMode(a, OUTPUT);
+}
+void loop() {
+  if(Serial.available()){
+    val=Serial.read();
+    if(val=='h')
+    digitalWrite(a,HIGH);
+    else if(val=='l')
+    digitalWrite(a,LOW);       
+  }
+}
